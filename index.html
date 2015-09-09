@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hello!</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html">
+    <link rel="import" href="/components/curtissimo-calender/curtissimo-calender.html">
+  </head>
+  <body unresolved>
+    <template is="dom-bind">
+      <iron-localstorage name="appointments" value="{{value}}">
+      <curtissimo-calender appointments="{{value.appointments}}"></curtissimo-calendar>
+    </template>
+  </body>
+</html>

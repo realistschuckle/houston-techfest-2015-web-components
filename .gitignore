@@ -22,3 +22,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+
+# Web stuff
+bower_components

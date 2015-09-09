@@ -1,0 +1,9 @@
+{
+  "name": "houston-techfest-2015-web-components",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "iron-localstorage": "PolymerElements/iron-localstorage#^1.0.0",
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
