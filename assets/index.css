@@ -15,6 +15,13 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+.calendar-holder {
+  flex: 0 0 320px;
+  box-shadow: 1px 0 1px 0 black;
+  position: relative;
+  z-index: 2;
+}
+
 #calendar {
   height: 320px;
   width: 300vw;
@@ -122,6 +129,10 @@
   top: 180px;
 }
 
+.a20 {
+  top: 280px;
+}
+
 .h0-25 {
   height: 5px;
 }
@@ -140,6 +151,47 @@
 
 .overflow-horizontal {
   overflow-x: auto;
+}
+
+.overflow-vertical {
+  overflow-y: auto;
+}
+
+.appointment-card {
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .5);
+  flex: 0 0 250px;
+  margin: 1em;
+  text-align: center;
+  min-height: 100px;
+}
+
+.past {
+  opacity: .5;
+}
+
+.active {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .5);
+  transform: scale(1.1);
+}
+
+.appointment-card header h1 {
+  font-size: 30px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.appointment-card header h2 {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.notes {
+  text-align: left;
+  padding: 1em;
 }
 
 html, body {
@@ -169,4 +221,7 @@ header h1 {
 
 footer {
   font-size: 10px;
+  background-color: #D32F2F;
+  color: white;
+  padding: .25em;
 }
