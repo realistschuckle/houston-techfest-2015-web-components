@@ -15,7 +15,7 @@
       <h1>day planner of ಠ_ಠ</h1>
     </header>
     <main class="flex layout vertical">
-      <div class="overflow-horizontal">
+      <div class="overflow-horizontal calendar-holder">
         <div id="calendar">
           <section class="month day-30">
             <header>September</header>
@@ -26,6 +26,7 @@
                 <div class="appt a9 h0-5"></div>
                 <div class="appt a10 h0-25"></div>
                 <div class="appt a15 h3"></div>
+                <div class="appt a20 h1"></div>
               </div>
               <div class="day">3</div>
               <div class="day">4</div>
@@ -128,8 +129,65 @@
           </section>
         </div>
       </div>
-      <div id="appointments" class="flex">
-        appts
+      <div id="appointments" class="flex overflow-vertical">
+        <div class="layout horizontal center-justified wrap">
+          <section class="appointment-card past">
+            <header>
+              <h1>Do a thing</h1>
+              <h2>Somepleace</h2>
+            </header>
+            <div>
+              <time datetime="2015-09-02T14:00:00-0500">9am</time> -
+              <time datetime="2015-09-02T15:00:00-0500">10am</time>
+            </div>
+          </section>
+          <section class="appointment-card past">
+            <header>
+              <h1>Do another thing</h1>
+              <h2>Another place</h2>
+            </header>
+            <div>
+              <time datetime="2015-09-02T15:00:00-0500">10am</time> -
+              <time datetime="2015-09-02T15:30:00-0500">10:30am</time>
+            </div>
+            <div class="notes">
+              Here are some notes for this meeting.
+            </div>
+          </section>
+          <section class="appointment-card past">
+            <header>
+              <h1>Do a thing</h1>
+              <h2>Somepleace</h2>
+            </header>
+            <div>
+              <time datetime="2015-09-02T16:00:00-0500">11am</time> -
+              <time datetime="2015-09-02T16:15:00-0500">11:15am</time>
+            </div>
+          </section>
+          <section class="appointment-card active">
+            <header>
+              <h1>Do a thing</h1>
+              <h2>Somepleace</h2>
+            </header>
+            <div>
+              <time datetime="2015-09-02T20:00:00-0500">3pm</time> -
+              <time datetime="2015-09-02T23:00:00-0500">6pm</time>
+            </div>
+            <div class="notes">
+              Here are some notes for this meeting.
+            </div>
+          </section>
+          <section class="appointment-card">
+            <header>
+              <h1>Do a thing</h1>
+              <h2>Somepleace</h2>
+            </header>
+            <div>
+              <time datetime="2015-09-02T20:00:00-0500">8pm</time> -
+              <time datetime="2015-09-02T23:00:00-0500">9pm</time>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
     <footer class="layout horizontal center center-justified">
