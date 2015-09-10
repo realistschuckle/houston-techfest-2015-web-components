@@ -2,8 +2,16 @@
 
 <dom-module id="curtissimo-calender">
   <template>
+    <style>
+      :host {
+        overflow: auto;
+      }
+    </style>
+
     <h1>Appointments</h1>
-    <div>{{appointments.lenth}}</div>
+    <div>{{appointments.length}}</div>
+    <button on-tap="add">Add</button>
+    <button id="clear" on-tap="clear" disabled>Clear</button>
     <template is="dom-repeat" items="{{appointments}}">
       <h2>{{item.title}}</h2>
     </template>
@@ -13,7 +21,31 @@
       is: 'curtissimo-calender',
 
       properties: {
-        appointments: Array
+        appointments: {
+          type: Array,
+          value: [],
+          readOnly: false,
+          notify: true
+        }
+      },
+
+      observers: [
+        '_appointmentsChanged(appointments.length)'
+      ],
+
+      _appointmentsChanged: function () {
+        this.$.clear.disabled = !(this.appointments || []).length;
+      },
+
+      clear: function () {
+        this.splice('appointments', 0, this.appointments.length);
+      },
+
+      add: function () {
+        if (!this.appointments) {
+          this.appointments = [];
+        }
+        this.push('appointments', {title: 'hello, dolly!'});
       }
     })
   </script>

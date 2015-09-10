@@ -2,15 +2,21 @@
 <html>
   <head>
     <title>Hello!</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/assets/index.css">
     <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="/bower_components/polymer/polymer.html">
+    <link rel="import" href="/bower_components/iron-localstorage/iron-localstorage.html">
     <link rel="import" href="/components/curtissimo-calender/curtissimo-calender.html">
+    <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
   </head>
-  <body unresolved>
+  <body class="layout vertical fit fullbleed" unresolved>
     <template is="dom-bind">
-      <iron-localstorage name="appointments" value="{{value}}">
-      <curtissimo-calender appointments="{{value.appointments}}"></curtissimo-calendar>
+      <div style="height: 100px;">{{appointments.length}}</div>
+      <iron-localstorage name="appointments" value="{{appointments}}"></iron-localstorage>
+      <curtissimo-calender style="background-color: orange;" class="flex" appointments="{{appointments}}"></curtissimo-calendar>
     </template>
   </body>
+  <script>
+
+  </script>
 </html>
