@@ -3,18 +3,132 @@
   <head>
     <title>Hello!</title>
     <link rel="stylesheet" href="/assets/index.css">
-    <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <!--script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="/bower_components/polymer/polymer.html">
     <link rel="import" href="/bower_components/iron-localstorage/iron-localstorage.html">
-    <link rel="import" href="/components/curtissimo-calender/curtissimo-calender.html">
+    <link rel="import" href="/components/curtissimo-calender/curtissimo-calender.html"-->
     <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
   </head>
   <body class="layout vertical fit fullbleed" unresolved>
-    <template is="dom-bind">
-      <div style="height: 100px;">{{appointments.length}}</div>
-      <iron-localstorage name="appointments" value="{{appointments}}"></iron-localstorage>
-      <curtissimo-calender style="background-color: orange;" class="flex" appointments="{{appointments}}"></curtissimo-calendar>
-    </template>
+    <header>
+      <h1>curtissimo - calendar of ♡</h1>
+    </header>
+    <main class="flex layout vertical">
+      <div class="overflow-horizontal">
+        <div id="calendar">
+          <section class="month day-30">
+            <header>September</header>
+            <div class="day-container layout horizontal">
+              <div class="day">1</div>
+              <div class="day">2</div>
+              <div class="day">3</div>
+              <div class="day">4</div>
+              <div class="day">5</div>
+              <div class="day sunday">6</div>
+              <div class="day">7</div>
+              <div class="day">8</div>
+              <div class="day">9</div>
+              <div class="day">10</div>
+              <div class="day">11</div>
+              <div class="day">12</div>
+              <div class="day sunday">13</div>
+              <div class="day monday">14</div>
+              <div class="day tuesday">15</div>
+              <div class="day wednesday">16</div>
+              <div class="day thursday">17</div>
+              <div class="day friday">18</div>
+              <div class="day saturday">19</div>
+              <div class="day sunday">20</div>
+              <div class="day">21</div>
+              <div class="day">22</div>
+              <div class="day">23</div>
+              <div class="day">24</div>
+              <div class="day">25</div>
+              <div class="day">26</div>
+              <div class="day sunday">27</div>
+              <div class="day">28</div>
+              <div class="day">29</div>
+              <div class="day">30</div>
+            </div>
+          </section><section class="month day-31">
+            <header>October</header>
+            <div class="day-container layout horizontal">
+              <div class="day">1</div>
+              <div class="day">2</div>
+              <div class="day">3</div>
+              <div class="day sunday">4</div>
+              <div class="day">5</div>
+              <div class="day">6</div>
+              <div class="day">7</div>
+              <div class="day">8</div>
+              <div class="day">9</div>
+              <div class="day">10</div>
+              <div class="day sunday">11</div>
+              <div class="day">12</div>
+              <div class="day">13</div>
+              <div class="day">14</div>
+              <div class="day">15</div>
+              <div class="day">16</div>
+              <div class="day">17</div>
+              <div class="day sunday">18</div>
+              <div class="day">19</div>
+              <div class="day">20</div>
+              <div class="day">21</div>
+              <div class="day">22</div>
+              <div class="day">23</div>
+              <div class="day">24</div>
+              <div class="day sunday">25</div>
+              <div class="day">26</div>
+              <div class="day">27</div>
+              <div class="day">28</div>
+              <div class="day">29</div>
+              <div class="day">30</div>
+              <div class="day">31</div>
+            </div>
+          </section><section class="month day-30">
+            <header>November</header>
+            <div class="day-container layout horizontal">
+              <div class="day sunday">1</div>
+              <div class="day">2</div>
+              <div class="day">3</div>
+              <div class="day">4</div>
+              <div class="day">5</div>
+              <div class="day">6</div>
+              <div class="day">7</div>
+              <div class="day sunday">8</div>
+              <div class="day">9</div>
+              <div class="day">10</div>
+              <div class="day">11</div>
+              <div class="day">12</div>
+              <div class="day">13</div>
+              <div class="day">14</div>
+              <div class="day sunday">15</div>
+              <div class="day">16</div>
+              <div class="day">17</div>
+              <div class="day">18</div>
+              <div class="day">19</div>
+              <div class="day">20</div>
+              <div class="day">21</div>
+              <div class="day sunday">22</div>
+              <div class="day">23</div>
+              <div class="day">24</div>
+              <div class="day">25</div>
+              <div class="day">26</div>
+              <div class="day">27</div>
+              <div class="day">28</div>
+              <div class="day sunday">29</div>
+              <div class="day">30</div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div id="appointments" class="flex">
+        appts
+      </div>
+    </main>
+    <footer class="layout horizontal center center-justified">
+      <div><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Web Components Presentation for Houston TechFest 2015</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://curtis.schlak.com//houston-techfest-2015-web-components" property="cc:attributionName" rel="cc:attributionURL">curtissimo llc</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
+    </footer>
   </body>
   <script>
 
