@@ -18,6 +18,11 @@
 #calendar {
   height: 320px;
   width: 300vw;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
 }
 
 #calendar > .month {
