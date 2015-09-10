@@ -15,10 +15,8 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
-
 #calendar {
-  height: 150px;
+  height: 320px;
   width: 300vw;
 }
 
@@ -36,25 +34,21 @@
   background-color: white;
 }
 
-#calendar .day-container :first-child {
+#calendar .day-container > :first-child {
   border-left: 1px inset #D32F2F;
 }
 
-#calendar .day-container .sunday {
-  border-right: 1px solid black;
-  background-color: #C5CAE9;
-}
-
-#calendar .day-container .sunday + * {
+.saturday,
+.sunday {
   background-color: #C5CAE9;
 }
 
 #calendar > .day-30 > .day-container > .day,
 #calendar > .day-31 > .day-container > .day {
-  flex-basis: 3.33333333333333vw;
   box-sizing: border-box;
-  text-align: right;
-  padding-right: .25em;
+  text-align: center;
+  position: relative;
+  border-right: 1px solid #ECEFF1;
 }
 
 #calendar > .day-30 > .day-container > .day {
@@ -65,13 +59,83 @@
   flex-basis: 3.2258064516129vw;
 }
 
+#calendar > .day-30 > .day-container > .day > .appt {
+  width: 3.33333333333333vw;
+}
+
+#calendar > .day-31 > .day-container > .day > .appt {
+  width: 3.2258064516129vw;
+}
+
 #calendar > .month > header {
   position: absolute;
   bottom: 0;
   left: 10px;
   color: rgba(62, 39, 35, .1);
-  font-size: 60px;
+  font-size: 100px;
   font-weight: 700;
+  z-index: 1;
+}
+
+.today {
+  background-color: #FFF59D;
+}
+
+.selected {
+  background-color: #FFEB3B;
+}
+
+.day-1:before {
+  content: "1";
+}
+
+.day-2:before {
+  content: "2";
+}
+
+.day > .appt {
+  position: absolute;
+  color: white;
+}
+
+.day > .appt:nth-child(2n) {
+  background-color: rgba(62, 39, 35, .75);
+}
+
+.day > .appt:nth-child(2n + 1) {
+  background-color: rgba(239, 108, 0, .75);
+}
+
+.a8 {
+  top: 40px;
+}
+
+.a9 {
+  top: 60px;
+}
+
+.a10 {
+  top: 80px;
+}
+
+.a15 {
+  top: 180px;
+}
+
+.h0-25 {
+  height: 5px;
+}
+
+.h0-5 {
+  height: 10px;
+}
+
+.h1 {
+  height: 20px;
+}
+
+.h3 {
+  height: 60px;
 }
 
 .overflow-horizontal {
@@ -93,13 +157,14 @@ button, input, select, textarea {
 }
 
 body > header {
-  padding: 1em;
   background-color: #D32F2F;
   color: white;
 }
 
 header h1 {
-  font-size: 20px;
+  padding: 0 .25em;
+  line-height: 20px;
+  font-size: 40px;
 }
 
 footer {
