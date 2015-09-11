@@ -155,31 +155,33 @@
   height: 60px;
 }
 
-.dh1 {
+.timeline-entry {
+  font-size: 14px;
   position: absolute;
-  height: 148px;
-  width: inherit;
-  top: 0;
-  left: 8px;
-  right: 8px;
+  height: 96%;
+  z-index: 1;
+  top: 8px;
+  left: 0;
   border-radius: 8px;
   padding: 1em;
   box-sizing: border-box;
+}
+
+.dh1 {
+  width: 240px;
 }
 
 .dh0-5 {
-  position: absolute;
-  height: 74px;
-  width: inherit;
-  top: 0;
-  left: 8px;
-  right: 8px;
-  border-radius: 8px;
-  padding: 1em;
-  box-sizing: border-box;
+  width: 120px;
+}
+
+.dh0-25 {
+  width: 60px;
+  font-size: 12px;
 }
 
 .odd-appt {
+  color: black;
   background-color: #F38C0F;
 }
 
@@ -198,39 +200,37 @@
 
 .overflow-horizontal {
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .overflow-vertical {
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
-table {
-  background-color: white;
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td, th {
-  padding: .5em;
-  height: 20px;
-}
-
-th {
-  width: 50px;
-  text-align: right;
-  color: #E0E0E0;
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.hour th {
-  color: inherit;
-}
-
-td {
-  border-bottom: 1px solid #DFDFDF;
+#timeline-container {
   position: relative;
+  background-color: white;
+}
+
+#timeline-header {
+  font-size: 10px;
+}
+
+#timeline-entries > div,
+#timeline-header > div {
+  display: inline-block;
+  flex: 0 0 60px;
+  text-align: center;
+  border-right: 1px solid #ECEFF1;
+  box-sizing: border-box;
+  color: #D7CCC8;
+  position: relative;
+}
+
+#timeline-header .hour {
+  font-weight: 700;
+  color: inherit;
 }
 
 html, body {
