@@ -1,0 +1,192 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<dom-module id="curtissimo-hours">
+  <style>
+    .dh1 {
+      width: 240px;
+    }
+
+    .dh0-5 {
+      width: 120px;
+    }
+
+    .dh0-25 {
+      width: 60px;
+      font-size: 12px;
+    }
+
+    .odd-appt {
+      color: black;
+      background-color: #F38C0F;
+    }
+
+    .even-appt {
+      background-color: #6E5829;
+      color: white;
+    }
+
+    #appointments header {
+      padding: 0 .25em;
+      line-height: 45px;
+      font-size: 30px;
+      height: 45px;
+      background-color: #FFCDD2;
+    }
+
+    .overflow-horizontal {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .overflow-vertical {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    #timeline-container {
+      position: relative;
+      background-color: white;
+    }
+
+    #timeline-header {
+      font-size: 10px;
+    }
+
+    #timeline-entries > div,
+    #timeline-header > div {
+      display: inline-block;
+      flex: 0 0 60px;
+      text-align: center;
+      border-right: 1px solid #ECEFF1;
+      box-sizing: border-box;
+      color: #D7CCC8;
+      position: relative;
+    }
+
+    #timeline-header .hour {
+      font-weight: 700;
+      color: inherit;
+    }
+
+    .timeline-entry {
+      font-size: 14px;
+      position: absolute;
+      height: 96%;
+      z-index: 1;
+      top: 8px;
+      left: 0;
+      border-radius: 8px;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+  </style>
+  <template>
+    <div id="appointments" class="flex overflow-vertical layout vertical stretch">
+      <header>2 September</header>
+      <div class="flex overflow-horizontal layout vertical" id="timeline-container">
+          <div id="timeline-header" class="layout horizontal">
+            <div class="hour">6:00am</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">7:00am</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">8:00am</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">9:00am</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">10:00am</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">11:00am</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">noon</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">1:00pm</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">2:00pm</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+            <div class="hour">3:00pm</div>
+            <div>:15</div>
+            <div>:30</div>
+            <div>:45</div>
+          </div>
+          <div id="timeline-entries" class="flex layout horizontal">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+              <div class="timeline-entry odd-appt dh1">
+                I have to do some work for some people at this time
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+              <div class="timeline-entry even-appt dh0-5">
+                I have to do some work for some people at this time
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+              <div class="timeline-entry odd-appt dh0-25">
+                I have to do some work for some people at this time
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'curtissimo-hours'
+    });
+  </script>
+</dom-module>
