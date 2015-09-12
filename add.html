@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add!</title>
+    <link rel="stylesheet" href="/assets/index.css">
+    <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html">
+    <link rel="import" href="/bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+    <link rel="import" href="/bower_components/iron-localstorage/iron-localstorage.html">
+    <link rel="import" href="/bower_components/paper-input/paper-input.html">
+    <link rel="import" href="/bower_components/paper-card/paper-card.html">
+    <link rel="import" href="/bower_components/paper-button/paper-button.html">
+
+    <style>
+      paper-card {
+        margin-top: 1em;
+        width: 400px;
+      }
+      paper-input {
+        margin: 0 1em;
+      }
+    </style>
+  </head>
+  <body class="layout vertical fit fullbleed" unresolved>
+    <header>
+      <h1>create an appointment for ಠ_ಠ</h1>
+    </header>
+    <main class="flex layout vertical center">
+      <template is="dom-bind">
+        <iron-localstorage name="schedule" value="{{schedule}}" id="storage"></iron-localstorage>
+        <paper-card heading="New schedule entry" class="layout vertical">
+          <paper-input label="Notes" id="notes"></paper-input>
+          <paper-input label="Date/Time" id="time"></paper-input>
+          <paper-input label="Duration (in 15-min increments)" id="duration"></paper-input>
+          <div class="layout horizontal end-justified">
+            <paper-button id="create" class="self-end">Create</paper-button>
+          </div>
+        </paper-card>
+      </template>
+    </main>
+    <footer class="layout horizontal center center-justified">
+      <div><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Web Components Presentation for Houston TechFest 2015</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://curtissimo.com" property="cc:attributionName" rel="cc:attributionURL">curtissimo llc</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
+    </footer>
+    <script>
+      function resetDate() {
+        var time = document.getElementById('time');
+        var d = new Date();
+        d.setHours(12, 0, 0, 0);
+        time.value = d.toISOString();
+        time.label = time.label + ' (' + (-d.getTimezoneOffset() / 60) + ' hours)';
+      }
+
+      function resetForm() {
+        resetDate();
+        document.getElementById('duration').value = '4';
+        document.getElementById('notes').value = '';
+      }
+
+      window.addEventListener('WebComponentsReady', function () {
+        resetForm();
+        document.getElementById('create').addEventListener('click', function () {
+          var appt = {
+            duration: document.getElementById('duration').value,
+            from: document.getElementById('time').value,
+            notes: document.getElementById('notes').value
+          };
+          var storage = document.getElementById('storage');
+
+          var appts = (storage.value || []).slice();
+          appts.push(appt);
+          appts.sort(function (x, y) {
+            if (x.from.valueOf() < y.from.valueOf()) {
+              return -1;
+            }
+            if (x.from.valueOf() > y.from.valueOf()) {
+              return 1;
+            }
+            return 0;
+          });
+
+
+          resetForm();
+          storage.value = appts;
+          storage.save();
+        });
+      });
+    </script>
+  </body>
+</html>

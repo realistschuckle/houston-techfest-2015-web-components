@@ -191,7 +191,18 @@
         var tomorrow = new Date(this.day.valueOf());
         tomorrow.setDate(tomorrow.getDate() + 1);
         tomorrow.setHours(0, 0, 0, 0);
-        for (var appt of this.appointments) {
+
+        var appts = this.appointments.slice();
+        // appts.sort(function (x, y) {
+        //   if (x.from.valueOf() < y.from.valueOf()) {
+        //     return -1;
+        //   }
+        //   if (x.from.valueOf() > y.from.valueOf()) {
+        //     return 1;
+        //   }
+        //   return 0;
+        // });
+        for (var appt of appts) {
           if (appt.from.valueOf() > this.day.valueOf()) {
             if (appt.from.valueOf() < tomorrow.valueOf()) {
               var id = '#qh' + appt.from.getHours() + appt.from.getMinutes();
@@ -207,8 +218,7 @@
               }
 
               child.style.width = (60 * appt.duration) + 'px';
-              pre.innerHTML = appt.notes;
-              child.appendChild(pre);
+              child.innerHTML = appt.notes;
               Polymer.dom(elem).appendChild(child);
               odd = !odd;
             }

@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
     "iron-localstorage": "PolymerElements/iron-localstorage#^1.0.0",
-    "polymer": "Polymer/polymer#^1.0.0",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0"
+    "paper-button": "PolymerElements/paper-button#^1.0.0",
+    "paper-card": "PolymerElements/paper-card#^1.0.0",
+    "paper-input": "PolymerElements/paper-input#^1.0.0",
+    "polymer": "Polymer/polymer#^1.0.0"
   }
 }
