@@ -3,19 +3,6 @@
 
 <dom-module id="curtissimo-hours">
   <style>
-    .dh1 {
-      width: 240px;
-    }
-
-    .dh0-5 {
-      width: 120px;
-    }
-
-    .dh0-25 {
-      width: 60px;
-      font-size: 12px;
-    }
-
     .odd-appt {
       color: black;
       background-color: #F38C0F;
@@ -210,6 +197,7 @@
               var id = '#qh' + appt.from.getHours() + appt.from.getMinutes();
               var elem = Polymer.dom(this.root).querySelector(id);
               var child = document.createElement('div');
+              var pre = document.createElement('pre');
               child.className = 'timeline-entry ';
 
               if (odd) {
@@ -219,7 +207,8 @@
               }
 
               child.style.width = (60 * appt.duration) + 'px';
-              child.innerHTML = appt.notes;
+              pre.innerHTML = appt.notes;
+              child.appendChild(pre);
               Polymer.dom(elem).appendChild(child);
               odd = !odd;
             }

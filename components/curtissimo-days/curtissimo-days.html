@@ -110,6 +110,24 @@
         overflow-x: auto;
         overflow-y: hidden;
       }
+
+      .odd-appt {
+        color: black;
+        background-color: #F38C0F;
+      }
+
+      .even-appt {
+        background-color: #6E5829;
+        color: white;
+      }
+
+      .appt {
+        font-size: 0;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        box-sizing: border-box;
+      }
     </style>
     <div class="overflow-horizontal calendar-holder">
       <div id="calendar">
@@ -117,7 +135,7 @@
             <header>{{item.name}}</header>
             <div class="day-container layout horizontal" on-tap="_selectDate">
               <template is="dom-repeat" items="{{item.days}}">
-                <div class$="{{item.className}}" data-date$="{{item.isoDate}}">{{item.number}}</div>
+                <div id$="{{item.blockId}}" class$="{{item.className}}" data-date$="{{item.isoDate}}">{{item.number}}</div>
               </template>
             </div>
           </section></template>
@@ -188,6 +206,11 @@
         notify(this.className);
       }
     };
+    Object.defineProperty(Day.prototype, 'blockId', {
+      get: function () {
+        return 'd' + this.date.getFullYear() + this.date.getMonth() + this.date.getDate();
+      }
+    });
     Object.defineProperty(Day.prototype, 'className', {
       get: function () {
         var today = new Date();
@@ -228,7 +251,38 @@
         }
       },
 
-      _appointmentsChanged: function (old, current) {
+      _appointmentsChanged: function (current, old) {
+        setTimeout((function () {
+          if (!current) {
+            return;
+          }
+
+          var odd = true;
+          var tomorrow = new Date(this.selected.valueOf());
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          tomorrow.setHours(0, 0, 0, 0);
+          for (var appt of current) {
+            if (typeof appt.from === 'string') {
+              appt.from = new Date(appt.from);
+            }
+            var d = appt.from;
+            var id = '#d' + d.getFullYear() + d.getMonth() + d.getDate();
+            var elem = Polymer.dom(this.root).querySelector(id);
+            var child = document.createElement('div');
+            child.className = 'appt ';
+
+            if (odd) {
+              child.className += 'odd-appt';
+            } else {
+              child.className += 'even-appt';
+            }
+
+            child.style.height = (4 * appt.duration) + 'px';
+            child.style.top = (16 * (d.getHours() - 6)) + 'px';
+            Polymer.dom(elem).appendChild(child);
+            odd = !odd;
+          }
+        }).bind(this), 0);
       },
 
       _selectedChanged: function () {
