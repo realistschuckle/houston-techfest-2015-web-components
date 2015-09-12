@@ -200,6 +200,7 @@
           return;
         }
 
+        var odd = true;
         var tomorrow = new Date(this.day.valueOf());
         tomorrow.setDate(tomorrow.getDate() + 1);
         tomorrow.setHours(0, 0, 0, 0);
@@ -209,10 +210,18 @@
               var id = '#qh' + appt.from.getHours() + appt.from.getMinutes();
               var elem = Polymer.dom(this.root).querySelector(id);
               var child = document.createElement('div');
-              child.className = 'odd-appt timeline-entry';
+              child.className = 'timeline-entry ';
+
+              if (odd) {
+                child.className += 'odd-appt';
+              } else {
+                child.className += 'even-appt';
+              }
+
               child.style.width = (60 * appt.duration) + 'px';
               child.innerHTML = appt.notes;
               Polymer.dom(elem).appendChild(child);
+              odd = !odd;
             }
           }
         }
