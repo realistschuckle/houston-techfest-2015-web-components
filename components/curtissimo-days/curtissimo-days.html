@@ -143,6 +143,8 @@
     </div>
   </template>
   <script>
+    'use strict';
+    
     var months = [
       'January',
       'February',
@@ -255,6 +257,12 @@
         setTimeout((function () {
           if (!current) {
             return;
+          }
+
+          var all = Polymer.dom(this.root).querySelectorAll('.appt');
+          for (let elem of all) {
+            let parent = Polymer.dom(elem).parentNode;
+            Polymer.dom(parent).removeChild(elem);
           }
 
           var odd = true;
