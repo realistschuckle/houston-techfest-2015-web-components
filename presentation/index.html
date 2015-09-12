@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Agile User Experience with Web Components</title>
+    <meta name="description" content="A technology-enabled process for Web development">
+    <meta name="author" content="Curtis Schlak">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/blood.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 class="normal-text">
+            Building Web Applications with Web Components
+          </h1>
+        </section>
+        <section>
+          <svg width="320" height="240" viewBox="0 0 640 480">
+           <path d="m359.75,184.899994c2.992004,-51.924988 -61.911987,-90.623993 -104.968994,-102.582993c-55.463989,-15.406998 -114.323013,-8.966003 -166.047012,15.662994c-27.244003,12.973007 -52.213005,29.652008 -75.010002,49.410004c-7.715012,6.685989 -11.822014,7.056 -11.822014,16.763c0,14.776993 0,29.554001 0,44.330994c0,79.500992 0,159.001999 0,238.503006c0,8.152008 110.933014,3.743011 123.189011,3.743011c32.983002,0 65.966019,0 98.949997,0c12.54599,0 29.854004,6.423004 30.312012,-7.934021c1.029999,-32.272003 2.061005,-64.543976 3.089996,-96.815002c0.162994,-5.088989 -2.001007,-18.895966 0.747009,-23.395966c4.23999,-6.942017 27.263,-13.496033 34.421997,-17.040039c11.308014,-5.597961 22.61499,-11.194977 33.923004,-16.792969c4.074951,-2.018005 7.174988,-21.388 8.46701,-25.479004c8.248962,-26.123016 16.497986,-52.248016 24.747986,-78.373016" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill-rule="evenodd" fill="white" clip-rule="evenodd" id="path3"/>
+           <path d="m1.902,481.812012c97.243996,0 194.488014,0 291.730995,0c-1.579987,-26.20401 -6.888,-52.207001 -11.585999,-78.046021c-3.714996,-20.429993 -15.535004,-44.082977 -10.225006,-65.093994c11.654999,-46.114014 70.032013,-27.503998 98.834015,-11.587982c7.360992,-15.841034 -105.786011,-61.514008 -122.106018,-68.901031c-12.612976,-5.708984 -26.822998,-3.787979 -40.458984,-5.735977c-15.843994,-2.264008 -31.495026,-4.991013 -47.373016,-7.157013c38.626984,10.223007 75.165009,19.478989 111.786011,36.124985c-21.828003,-3.473999 -43.623993,-9.40097 -66.117004,-8.178986c25.440002,3.242004 52.641022,10.354004 76.341003,20.449005c-28.811981,-2.601013 -54.649994,-2.957001 -83.15799,2.72699c10.677979,0.228027 21.356995,0.45401 32.034973,0.682007c-20.053986,11.119019 -41.046997,19.742004 -55.891968,38.170013c13.376984,-7.872009 25.862976,-17.485992 42.260986,-17.040985c-7.398987,5.030975 -15.401978,10.594971 -17.722015,19.767975c8.972015,-7.35199 18.326019,-14.492004 29.308014,-18.403992c-4.997986,15.449982 -9.996002,30.899994 -14.994019,46.350983c5.907043,-9.087982 11.812988,-18.177002 17.721008,-27.264984c-4.770996,15.222992 -9.541992,30.445007 -14.312988,45.667999c5.679993,-9.997009 11.359009,-19.994019 17.039001,-29.990997c-0.453979,8.634003 -0.908997,17.268005 -1.363007,25.901001c1.237,-3.097015 3.496979,-5.779022 4.771027,-8.860992c0,8.179993 0,16.358978 0,24.538971c-2.718018,-2.73999 -7.419006,-3.477997 -10.225037,-6.134979c-1.362,6.360992 -2.726013,12.723999 -4.088013,19.084991c-1.886963,-4.144989 -5.505981,-7.48999 -7.497986,-11.588013c-0.221985,3.456024 -2.445984,6.771027 -2.72699,10.225006c-6.895996,-9.244995 -7.211975,-20.712982 -6.81601,-32.03598c-4.098969,15.03299 -7.134979,29.348999 -7.498016,44.987c-2.044983,-6.58902 -4.089966,-13.179016 -6.134949,-19.768005c-2.5,4.544006 -4.999023,9.088989 -7.498016,13.632996c0.22699,-5.681 0.454987,-11.360016 0.681976,-17.041016c-2.208984,2.497009 -5.461975,4.186005 -7.497986,6.81601c1.590027,-4.544006 3.181,-9.087982 4.770996,-13.631989c-5.453003,5.906982 -10.906006,11.813995 -16.359009,17.721985c2.084015,-10.001984 6.390015,-19.216003 10.225037,-28.627991c-4.090027,3.635986 -8.180023,7.270996 -12.270035,10.906006c4.090012,-7.951996 8.180008,-15.903992 12.270035,-23.856018c-11.212036,15.618011 -25.798035,18.330017 -10.906036,-6.134979c-2.725998,1.914978 -6.134979,2.855988 -8.860977,4.770996c3.181,-5.226013 6.362,-10.451996 9.541977,-15.678009c-20.590988,8.699005 -32.561996,26.47699 -45.667999,43.623993c-0.009979,-5.191986 1.914001,-9.934998 4.771027,-14.313995c-2.661011,2.179016 -6.156006,3.326019 -8.861023,5.453003c1.776001,-3.174988 2.287018,-7.065002 4.08902,-10.225006c-6.977997,5.651001 -14.548019,11.507996 -23.856003,9.542999c2.113983,-3.362976 3.473999,-7.979004 6.134995,-10.905975c-4.901001,5.345978 -18.121002,16.276978 -23.856995,10.224976c-2.979004,5.515015 -9.035004,9.424011 -15.677017,9.542999c0.909012,8.180023 1.817017,16.358002 2.725998,24.538025c-0.908981,0.227997 -1.816986,0.453979 -2.725998,0.681976c0.227005,-2.498993 0.453995,-4.998993 0.681,-7.497986c-1.589981,1.135986 -3.181,2.272003 -4.770981,3.40799c1.228989,-2.442993 2.064987,-5.117981 3.40799,-7.497986c-5.98201,8.743988 -14.558014,13.369995 -23.85701,17.722992c2.5,-9.315002 4.999008,-18.631012 7.498001,-27.946014c-6.737,10.410004 -20.159996,21.287018 -31.694984,25.901001c-23.472023,9.389008 -13.970024,37.72702 -13.970024,59.982025" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path7"/>
+           <path d="m152.033005,205.479004c11.53299,0 57.143997,3.75 59.981003,-9.542007" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill="none" id="path9"/>
+           <path d="m220.875,172.761002c-10.234009,15.425995 -27.231995,6.826996 -40.554993,2.386002c-15.95401,-5.317993 -19.306,-24.756012 -26.243011,-37.830002c9.675003,17.60701 4.850006,33.970001 25.902008,44.304993c14.60498,7.170013 32.559998,7.292007 40.895996,-8.860992" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path11"/>
+           <path d="m152.033005,133.908997c16.368973,-0.052002 24.621994,-25.042999 40.896988,-16.358994c-15.989014,-4.047005 -21.55899,20.610001 -40.896988,16.358994" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path13"/>
+           <path d="m169.072998,144.813995c2.700989,-9.744995 13.167999,-23.364998 24.539001,-17.721992c-1.188995,-5.428001 -0.600006,-6.792999 -4.089996,-10.905998c15.394012,-1.962006 33.670013,17.408997 47.712982,23.174988c16.465027,6.761017 32.938019,15.539001 47.031006,24.53801c-19.927002,-3.646011 -39.575989,-1.162003 -53.847992,14.313995c9.342987,-7.261002 -1.078003,-15.255997 -8.860992,-12.951004c-7.562988,2.240005 -8.255005,11.587006 -19.083984,11.587006c-16.613037,0.001999 -35.088013,-14.281006 -33.400024,-32.035004" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path15"/>
+           <path d="m289.718994,169.352997c-10.622009,0 -32.557007,-3.557007 -35.442993,10.223999c0.816986,-15.483002 26.239014,-18.242004 35.442993,-10.223999" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path17"/>
+           <path d="m136.354996,127.774002c16.638,0.591995 29.215012,-9.806999 44.986984,-12.951004" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#595959" fill="none" id="path21"/>
+           <path d="m98.184998,119.595001c5.649994,10.699005 22.869003,8.182999 32.716995,4.089996" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path23"/>
+           <path d="m141.126999,132.544998c-5.125,1.735001 -10.345001,2.542007 -15.677002,1.362991c8.667999,5.854004 14.94101,12.552002 19.766998,21.812012" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path25"/>
+           <path d="m148.625,200.707993c-20.975998,-2.687988 -40.496002,6.449005 -58.619003,-10.905991" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill="none" id="path29"/>
+           <path d="m130.901993,165.263c16.348007,11.899002 23.05101,30.854996 45.668991,32.718002" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path31"/>
+           <path d="m127.494003,191.845993c-10.632004,-2.011993 -21.083008,-6.233994 -29.991013,-12.268997c-8.47699,-5.742004 -15.099991,-17.074997 -25.901993,-17.721985" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path33"/>
+           <path d="m348.657013,361.567993c33.471985,-25.621002 44.879974,-79.562012 40.214996,-119.281998c-2.381012,-20.269989 -11.251007,-38.690002 -24.537018,-54.187988c-9.414001,-10.98201 -33.958984,-37.871017 -50.438995,-32.376999c-10.716003,3.571991 -16.514008,14.076996 -25.902008,20.447998c-11.411987,7.744995 -25,12.690994 -37.487976,18.403992c-30.344025,13.878998 -61.067017,16.279007 -94.064011,13.632004c6.011002,15.746002 47.778,16.285004 62.026993,24.537994c-10.687012,4.587006 -22.961975,1.546997 -34.079987,3.408005c45.98999,8.597 87.858002,29.799988 127.033997,54.983002c13.106995,8.427002 33.502991,14.613983 37.575989,30.899994c3.029999,12.123016 1.082001,27.308014 -0.34198,39.533997" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#595959" fill-rule="evenodd" fill="#E0AE5F" clip-rule="evenodd" id="path35"/>
+           <path d="m336.75,190.483002c-9.272003,9.455994 -23.56601,14.112 -36.807007,12.951004c4.294006,-11.568008 25.714996,-13.581009 36.807007,-12.951004" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path39"/>
+           <path d="m336.75,163.899994c7.174988,-25.958984 -23.19101,-14.190994 -33.39801,-3.40799c10.473022,-9.914001 23.856018,-4.118011 33.39801,3.40799" fill-rule="evenodd" fill="#3f3f3f" clip-rule="evenodd" id="path43"/>
+           <path d="m331.615997,147.541c-12.554993,-1.638992 -27.165009,-7.328003 -37.488007,3.408005" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path45"/>
+           <path fill="black" d="m336.75,162.537003c-3.697998,-1.659012 -7.279999,-3.639999 -10.906006,-5.453003c4.966003,0.375992 7.433014,2.559998 10.906006,5.453003" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill-rule="evenodd" clip-rule="evenodd" id="path47"/>
+           <path d="m-18.372002,182.304001c20.577003,-16.173004 44.810005,-34.909012 70.887993,-40.215012" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path49"/>
+           <path d="m-17.690002,172.761002c8.654999,-12.029999 16.965004,-24.108002 30.673004,-30.672012" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path51"/>
+           <path d="m-13.600998,208.886993c32.709999,-9.292999 59.888992,-11.526001 92.699997,-0.681992" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path53"/>
+           <path d="m-4.057999,292.044006c27.744003,-10.94101 56.041,-23.269012 86.565002,-23.174988c-6.722,5.463989 -13.613998,10.648987 -17.722,18.402985c13.770996,-12.798981 37.850006,-17.457001 55.89299,-19.766998" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path57"/>
+           <path d="m-8.147003,314.536987c17.414001,-14.094971 41.492004,-30.359985 64.753021,-31.354004" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path59"/>
+           <path d="m120.677994,251.147003c-29.981995,0.856003 -58.746994,-12.595001 -88.609993,-7.498001c27.269997,-12.660995 55.407005,4.869003 83.157005,-2.044998c-22.115997,-14.51001 -53.615997,-16.375 -79.067001,-11.587997" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path63"/>
+           <path d="m-17.008003,240.240997c11.560005,-8.623001 26.459007,-19.388992 41.579002,-19.084991c-11.466995,-0.423004 -23.287003,0.765991 -32.718002,7.498001" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path65"/>
+           <path d="m22.525002,183.667007c17.797997,-1.63501 37.256004,-0.985001 53.848,6.133987" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path67"/>
+           <path d="m34.112999,172.761002c16.586006,-3.202011 33.345009,0.121994 48.394997,6.815994" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path69"/>
+           <path d="m91.369003,152.994003c20.884003,6.658997 25.210999,32.505997 45.667999,37.488998" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path71"/>
+           <path d="m288.355988,161.173004c-14.39798,-12.766006 -33.260986,-22.795013 -51.121002,-29.990997" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path73"/>
+           <line y2="120.958" x2="224.284" y1="140.043" x1="239.961" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="line75"/>
+           <path d="m249.503998,142.769989c-4.799988,-5.173981 -8.885986,-10.91098 -14.313995,-14.995987" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path77"/>
+           <line y2="132.545" x2="250.186" y1="150.949" x1="263.817" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="line79"/>
+           <line y2="144.133" x2="267.225" y1="158.447" x1="277.45" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="line81"/>
+           <path d="m169.072998,105.962006c-10.130005,0.575989 -22.509995,4.512993 -27.945999,12.268997" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path85"/>
+           <path d="m197.02002,110.052002c-10.465027,-2.079002 -26.511017,6.031998 -36.126022,8.179001" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#595959" fill="none" id="path87"/>
+           <path d="m173.845001,218.429001c20.18399,10.395996 43.480011,11.145004 63.389984,23.175003" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill="none" id="path91"/>
+           <path d="m139.082001,322.716003c-10.949005,9.970001 -24.406998,16.286011 -33.399002,27.946991" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ffffff" fill="none" id="path93"/>
+           <path d="m135.673996,314.536987c-13.748993,2.884003 -26.335999,10.124023 -37.488998,18.403015" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#d9d9d9" fill="none" id="path95"/>
+           <path d="m113.179993,330.895996c-12.65799,5.074005 -21.885986,11.77301 -31.354004,21.812012" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#d9d9d9" fill="none" id="path97"/>
+           <path d="m101.593002,319.30899c-15.606003,8.246002 -32.754013,24.631012 -41.578995,39.53302" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#d9d9d9" fill="none" id="path99"/>
+           <path d="m53.880005,313.855011c-13.792007,2.375977 -25.693008,8.971985 -36.808006,17.039978" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path101"/>
+           <path d="m32.75,327.487c-14.333,2.837006 -25.777,9.328003 -37.488998,17.722992" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path103"/>
+           <path d="m17.071999,325.441986c-15.722,3.818024 -36.562996,17.737 -36.806999,35.444" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path105"/>
+           <path d="m32.068001,340.437988c-14.202995,1.637024 -26.459999,11.856018 -36.806999,21.130005" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path107"/>
+           <path d="m57.287994,319.30899c-13.330994,3.431 -22.311996,12.427002 -32.035995,21.812012" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path109"/>
+           <path d="m169.072998,294.770996c-9.024994,3.702026 -18.371002,5.766998 -26.582993,10.904999" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ffffff" fill="none" id="path111"/>
+           <path d="m161.574997,297.497009c-9.244003,-2.090027 -18.354004,3.839996 -25.901001,6.815002" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#d9d9d9" fill="none" id="path113"/>
+           <path d="m162.938004,289.317017c-10.16301,2.61499 -20.292007,5.138977 -29.309998,9.541992" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#d9d9d9" fill="none" id="path115"/>
+           <path d="m215.421997,120.958c-6.792999,-12.166 -27.671997,-21.924004 -41.578003,-21.812004" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path117"/>
+           <path d="m224.964996,184.348999c-24.459015,23.593002 -60.162003,11.348999 -89.972992,8.861008" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill="none" id="path119"/>
+           <path d="m93.414001,114.824005c4.213989,-2.223007 9.764008,-2.833008 14.996002,-1.363007" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path121"/>
+           <path d="m257.68399,216.384003c-5.071991,-3.083008 -12.772003,-2.988007 -19.085999,-1.363007" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path123"/>
+           <path d="m132.947006,213.658005c-14.917007,-0.32901 -30.511002,4.389999 -44.987015,-1.363007" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path125"/>
+           <path d="m95.458008,259.007996c-2.313019,5.756012 -8.85701,2.669006 -14.314011,0.682007" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path127"/>
+           <path d="m145.897995,101.873001c-15.220993,3.953995 -30.636993,5.453003 -46.349991,5.453003" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#838383" fill="none" id="path129"/>
+           <path d="m-17.690002,159.809998c29.273003,-30.126007 74.303009,-37.488998 114.511993,-37.488998" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ababab" fill="none" id="path83"/>
+           <path d="m197.701996,205.479004c-18.194977,4.756989 -40.257996,4.138 -57.937988,-2.044998c15.403,-4.60701 40.582977,1.225998 57.937988,2.044998" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#000000" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path27"/>
+           <path d="m126.449997,144.451996c13.899002,11.235001 21.990997,27.894012 34.762009,39.533997c9.353973,8.526001 20.03598,5.805008 33.399994,8.861008c-10.877991,-2.835999 -26.778015,-4.843994 -34.082001,-13.973007c-9.942993,-12.429993 -20.636993,-25.708984 -34.080002,-34.421997" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#595959" fill-rule="evenodd" fill="#000000" clip-rule="evenodd" id="path89"/>
+           <path d="m212.014008,150.630997c-4.261993,21.347 -36.94101,-8.07399 -15.675995,-12.268997c-2.94101,-12.133003 -11.759033,-2.809998 -15.677002,3.067001c-4.465027,6.697998 1.132996,14.990997 4.770996,20.447998c10.607971,15.912003 42.042999,4.681992 26.582001,-11.246002" stroke-width="0" stroke-miterlimit="10" stroke-linecap="square" stroke="#ffff00" fill-rule="evenodd" fill="#ffff00" clip-rule="evenodd" id="path19"/>
+           <rect x="0" y="0" width="640" height="480" stroke="#A1887F" fill-opacity="0" fill="black" stroke-width="10"/>
+          </svg>
+          <h3>You can pirate this</h3>
+          <p>
+            For more information about how you can digitally copy this and how
+            it won't probably hurt my economy, please visit
+          </p>
+          <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>
+          </p>
+        </section>
+        <section>
+          <h2>
+            <a xmlns:cc="http://creativecommons.org/ns#" href="http://curtis.schlak.com" property="cc:attributionName" rel="cc:attributionURL">curtis@schlak.com</a>
+          </h2>
+          <h3 class="normal-text">@realistschuckle</h3>
+          <p>
+            <svg width="530" height="78">
+              <path
+                 style="fill:white;fill-opacity:1"
+                 id="npm-inner"
+                 d="m 219.1856,41.134269 c 4.46494,-1.11985 10.53579,-2.64509 21.172,-2.92877 -0.29391,-0.5904 -0.55935,-1.20165 -0.79436,-1.83195 -4.13882,-0.0361 -16.88534,0.55427 -21.25165,1.63779 -0.0247,0.008 -0.0512,0.01 -0.0777,0.01 -0.14607,0 -0.28067,-0.10084 -0.31664,-0.24934 -0.0417,-0.17331 0.0644,-0.35217 0.23876,-0.39605 4.32658,-1.07399 16.76577,-1.67015 21.17201,-1.65863 -0.99162,-2.92878 -1.42962,-6.28417 -1.42962,-10.02985 0,-6.65361 2.06289,-9.1635 4.83455,-12.70928 -2.11961,-7.5828797 0.76037,-12.76624971 0.76037,-12.76624971 0,0 4.45367,-0.92729 12.87342,5.12818001 4.56357,-1.96337 16.73058,-2.12695 22.48678,-0.43595 3.534,-2.34611 9.99541,-5.67470001 12.60421,-4.74364001 0.70522,1.14248001 2.22595,4.46929001 0.92145,11.78177971 0.88726,1.60345 5.487,5.01979 5.50578,14.67622 -0.0759,3.56106 -0.44373,6.56785 -1.12622,9.11189 10.97755,-0.0933 17.43521,0.81691 21.88295,1.63958 0.17453,0.0361 0.29213,0.20567 0.2617,0.38275 -0.0303,0.15623 -0.16683,0.26859 -0.31842,0.26859 -0.0227,0 -0.0417,-0.002 -0.0644,-0.004 -4.44043,-0.82644 -10.90916,-1.73288 -21.95134,-1.63203 -0.1935,0.64558 -0.40954,1.25881 -0.64474,1.84346 3.75794,0.12566 14.07929,0.52945 22.49726,3.11538 0.17452,0.0534 0.2692,0.23604 0.21622,0.41133 -0.0417,0.13897 -0.17056,0.23028 -0.3109,0.23028 -0.0303,0 -0.0644,-0.004 -0.0947,-0.0151 -8.53557,-2.62027 -19.08085,-2.98019 -22.58818,-3.09652 -3.05252,6.73559 -9.31292,9.24906 -19.43346,10.29447 3.28003,2.07374 4.22045,4.67476 4.22045,11.7133 0,7.03814 -0.0947,7.9827 -0.072,9.60104 0.0343,2.6568 3.90935,3.92852 3.76546,4.78355 -0.1441,0.85344 -3.24207,0.71606 -4.69046,0.20785 -4.10285,-1.4357 -3.69351,-4.86375 -3.69351,-4.86375 l -0.13638,-9.41066 c 0,0 0.28066,-5.06545 -1.58121,-5.06545 0,1.01861 0,11.76075 0,15.4036 0,3.34765 2.33209,4.36467 2.33209,5.60244 0,2.12715 -4.26196,-0.2017 -5.57416,-1.5292 -2.003,-2.01856 -1.7753,-6.29905 -1.72609,-9.68482 0.0455,-3.26983 -0.0303,-10.42034 -0.0303,-10.42034 l -1.35924,0.0288 c 0,0 0.55738,15.62078 -0.71669,18.46736 -1.64741,3.65436 -6.61676,4.9114 -6.61676,3.2468 0,-1.11985 1.22464,-0.76351 1.9016,-3.2732 0.57812,-2.13489 0.38107,-18.0604 0.38107,-18.0604 0,0 -1.59248,0.94655 -1.59248,3.92852 0,1.36523 -0.0379,9.16331 -0.0379,11.48481 0,2.91924 -4.12755,4.58145 -6.11078,4.58145 -1.00486,0 -2.25421,-0.0492 -2.25421,-0.58425 0,-1.35013 3.77494,-2.14263 3.77494,-4.95129 0,-2.43545 -0.0532,-8.70036 -0.0532,-8.70036 0,0 -1.90358,0.32716 -4.61851,0.32716 -6.84427,0 -9.00954,-4.3873 -10.0391,-6.842 -1.34048,-3.19717 -3.07901,-4.69958 -4.92567,-5.89943 -1.13373,-0.73691 -1.39542,-1.60722 -0.0834,-1.85478 6.0594,-1.14626 7.60839,6.90117 11.6543,8.18262 2.8875,0.91617 6.59978,0.51992 8.44643,-0.67974 0.24469,-2.45867 2.00794,-4.58364 3.47728,-5.70329 -10.29111,-0.99221 -16.3924,-4.58165 -19.55482,-10.35185 -10.76527,0.25907 -16.87388,1.79383 -21.35206,2.91726 -0.32613,0.082 -0.64455,0.16179 -0.9517,0.24001 -0.0265,0.006 -0.0532,0.008 -0.0796,0.008 -0.14607,0 -0.2787,-0.0991 -0.31664,-0.24755 -0.0437,-0.1751 0.0644,-0.35416 0.23896,-0.39803 0.30833,-0.0762 0.62497,-0.15406 0.94912,-0.23783 z" />
+              <path
+                 style="fill:white;fill-opacity:1"
+                 d="m 0,1e-6 0,66.759825 c 18.522107,0.0038 37.137473,-0.01148 55.65958,0 0.01195,3.730387 0.0031,7.50593 0,11.240175 l 44.42553,0 c -0.003,-3.730386 -0.012,-7.509788 0,-11.240175 33.31586,-0.01148 66.59517,0.0038 99.91489,0 L 200,10e-7 0,10e-7 Z m 11.234043,11.240175 c 14.793756,-0.0077 29.63178,-0.0077 44.425537,0 0.0073,14.801831 0.0073,29.647951 0,44.449781 -3.728362,0 -7.505702,0.0038 -11.234053,0 -0.01528,-11.071444 0.01528,-22.138162 0,-33.209607 -3.728341,0.0038 -7.335474,-0.0038 -11.063824,0 -0.01528,11.067585 -0.154803,21.971716 -0.170219,33.039302 -7.333191,0.0077 -14.628107,0.01148 -21.957441,0 -0.0077,-14.801831 -0.0077,-29.477645 0,-44.279476 z m 55.659569,0 c 14.789899,-0.0077 29.631782,-0.0077 44.425538,0 0.007,14.801831 0.007,29.481504 0,44.279476 -7.32933,0 -14.79833,0.166436 -22.127661,0.170305 -0.01195,3.730387 0.0073,7.339482 0,11.069869 -7.460559,0.01148 -14.841175,0.01148 -22.297877,0 -0.0031,-18.532217 -0.0073,-36.987433 0,-55.51965 z m 55.489378,0 c 22.25431,-0.0077 44.63928,-0.0038 66.8936,0 0.003,14.801831 0.006,29.647951 0,44.449781 -3.7322,0 -7.5057,0.0038 -11.23402,0 -0.0164,-11.071444 0.0163,-22.138162 0,-33.209607 -3.73222,0.0038 -7.50571,-0.0038 -11.23406,0 -0.0153,11.071445 0.0153,22.138163 0,33.209607 -3.73221,-0.0038 -7.50569,0.0038 -11.23404,0 -0.0153,-11.071444 0.0153,-22.138162 0,-33.209607 -3.73221,0.0038 -7.33549,-0.0038 -11.06383,0 -0.0153,11.067585 0.0153,21.971716 0,33.039302 -7.3332,0.0077 -14.79833,0.01148 -22.12765,0 -0.007,-14.801831 -0.007,-29.477645 0,-44.279476 z"
+                 id="npm-outer" />
+              <path
+                 style="fill:white;fill-opacity:1"
+                 id="github"
+                 d="m 89.29181,22.397764 c 3.599097,-0.0038 7.202052,-0.0038 10.805,0 0.007,7.337199 0.012,14.674393 0,22.011592 -3.602948,0.0038 -7.205903,0.0038 -10.805,0 -0.01196,-7.337199 -0.01196,-14.674393 0,-22.011592 z" />
+              <path
+                 style="fill:white;fill-opacity:1"
+                 id="twitter"
+                 d="m 525.96801,44.095751 c 0.21694,-1.60744 0.34177,-3.24162 0.34177,-4.90518 0,-19.9626 -16.24296,-36.1477104 -36.27558,-36.1477104 -1.99105,0 -3.94306,0.16384 -5.8426,0.47605 C 480.78581,1.295691 476.7326,10e-7 472.37048,10e-7 c -11.96138,0 -21.64596,9.7077296 -21.64596,21.68597 0,4.35834 1.28051,8.40724 3.48555,11.80683 -0.29701,1.85737 -0.44884,3.75941 -0.44884,5.69716 0,19.96569 16.23462,36.1491 36.27281,36.1491 2.26153,0 4.46333,-0.2204 6.60327,-0.60774 3.32509,2.06634 7.24176,3.26868 11.44048,3.26868 11.95829,0 21.64673,-9.7102 21.64673,-21.68721 0,-4.52758 -1.3825,-8.73707 -3.75651,-12.21704 z m -32.54345,21.73559 c -11.52689,0.6014 -16.92094,-1.9532 -21.86229,-6.59841 -5.51842,-5.18833 -3.30163,-11.10605 1.19425,-11.40682 4.49343,-0.30063 7.19147,5.1024 9.58969,6.60536 2.3953,1.49739 11.50944,4.90888 16.32365,-0.60403 5.24223,-6.00133 -3.48617,-9.10679 -9.88409,-10.04684 -9.13481,-1.35489 -20.66802,-6.30504 -19.77078,-16.06007 0.89755,-9.74884 8.26752,-14.74737 16.0237,-15.45248 9.88685,-0.89909 16.32318,1.50033 21.41405,5.85171 5.88656,5.02775 2.70142,10.64839 -1.04907,11.10064 -3.73567,0.44962 -7.93146,-8.26968 -16.16889,-8.40075 -8.49047,-0.13354 -14.22876,8.85037 -3.74724,11.4042 10.48692,2.55104 21.71723,3.59913 25.76151,13.20222 4.04704,9.60401 -6.28821,19.80325 -17.82449,20.40527 z" />
+              <path
+                 d="m 432.81635,9.23321 c -3.53186,1.566381 -7.32819,2.624561 -11.31173,3.100611 4.0661,-2.4369207 7.18947,-6.295761 8.65972,-10.894131 C 426.3584,3.69664 422.1435,5.33501 417.65693,6.21802 414.06458,2.39085 408.94585,0 403.28087,0 c -10.87685,0 -19.69593,8.81618 -19.69593,19.690641 0,1.54335 0.17424,3.04638 0.51025,4.48751 -16.36904,-0.8211 -30.88141,-8.66069 -40.59569,-20.574131 -1.69537,2.90818 -2.6669,6.2904903 -2.6669,9.899311 0,6.83181 3.47714,12.85883 8.76196,16.38991 -3.22849,-0.10222 -6.26546,-0.98811 -8.92083,-2.46283 -0.002,0.0821 -0.002,0.1646 -0.002,0.24763 0,9.54035 6.78915,17.49847 15.79926,19.30864 -1.65264,0.45014 -3.39265,0.69057 -5.18883,0.69057 -1.26911,0 -2.50271,-0.12381 -3.7056,-0.3532 2.50656,7.82279 9.78004,13.51581 18.39895,13.67417 -6.74066,5.28174 -15.23285,8.42987 -24.4609,8.42987 -1.58977,0 -3.15745,-0.0936 -4.69826,-0.27547 8.71635,5.58744 19.06904,8.84738 30.19165,8.84738 36.22719,0 56.03831,-30.00457 56.03831,-56.02649 0,-0.85374 -0.0192,-1.70268 -0.0571,-2.54777 3.84769,-2.77573 7.18659,-6.24346 9.82708,-10.192531 z"
+                 id="skype"
+                 style="fill:white;fill-opacity:1" />
+            </svg>
+          </p>
+        </section>
+        <section data-background="#EF6C00">
+          <section>
+            <h1>web components!</h1>
+          </section>
+          <section>
+            <h2>custom elements</h2>
+            <div class="fragment">
+              register your custom element
+              <pre><code data-trim class="js">
+var prototype = Object.create(HTMLDivElement.prototype, {
+  uri: { value: undefined },
+  data: { value: undefined },
+  attachedCallback: function () {
+    this.uri = this.getAttribute('uri');
+    // Do some AJAXy stuff here...
+    this.data = content;
+    // Fire a data-received event
+  }
+});
+document.registerElement('declarative-ajax', HTMLDivElement.prototype);
+              </code></pre>
+            </div>
+            <div class="fragment">
+              and then use it in HTML
+              <pre><code data-trim class="html">
+&lt;body&gt;
+  &lt;declarative-ajax uri="http://example.com/api"&gt;&lt;/declarative-ajax&gt;
+&lt;/body&gt;
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>templates</h2>
+            <div class="fragment">
+              include it in your HTML
+              <pre><code data-trim class="html">
+&lt;template id="example-template"&gt;
+  &lt;img src="http://example.com/dummy.png"&gt;
+  &lt;div&gt;Bacon ipsum dolor amet brisket boudin&lt;/div&gt;
+  &lt;script&gt;alert('HELLO!');&lt;/script&gt;
+&lt;/template&gt;
+              </code></pre>
+            </div>
+            <div class="fragment">
+              access and use it in your script
+              <pre><code data-trim class="js">
+function appendTemplate(imgSrc, content) {
+  // Get the template and set the image's source
+  var t = document.querySelector("template");
+  t.querySelector('img').src = imgSrc;
+  t.querySelector('div').innerHTML = content;
+
+  // Clone the content and put it in the DOM
+  var clone = document.importNode(t.content, true);
+  document.querySelector("#template-example").appendNode(clone);
+}
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>HTML imports</h2>
+            <div class="fragment">
+              import html using a link tag
+              <pre><code data-trim class="html">
+&lt;link id="my-tag-link" rel="import" href="/components/my-tag.html"&gt;
+              </code></pre>
+            </div>
+            <div class="fragment">
+              get the content from the link's import attribute
+              <pre><code data-trim class="js">
+var link = document.getElementById('my-tag-link');
+var content = link.import;
+var clone = content.cloneNode(true);
+document.body.appendChild(clone);
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>Shadow DOM</h2>
+            <div class="fragment">
+              In a document like this...
+              <pre><code data-trim class="html">
+&lt;div id="hostElement"&gt;&lt;/div&gt;
+&lt;p&gt;This is in the normal DOM&lt;/p&gt;
+              </code></pre>
+            </div>
+            <div class="fragment">
+              ...create a shadow root and add DOM to it...
+              <pre><code data-trim class="js">
+var shadow = document.querySelector("#hostElement").createShadowRoot();
+shadow.innerHTML = '&lt;p id="my-paragraph"&gt;Here is some new text&lt;/p&gt;' +
+                   '&lt;style&gt;p { color: red };&lt;/style&gt;';
+              </code></pre>
+            </div>
+            <div class="fragment">
+            ...I can't get to the &lt;p&gt; tag in the shadow DOM...
+              <pre><code data-trim class="js">
+document.getElementById('my-paragraph'); // Returns undefined
+              </code></pre>
+            </div>
+            <div class="fragment">
+              ...and the style only applies in the shadow DOM.
+              <pre><code data-trim class="html" data-noescape>
+<div style="color:red">Here is some new text</div><div>This is in the normal DOM</div>
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>compatibility</h2>
+            <table class="compatibility">
+              <thead>
+                <tr>
+                  <th>Technology</th>
+                  <th>IE</th>
+                  <th>Chrome</th>
+                  <th>FF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>custom elements</td>
+                  <td>maybe</td>
+                  <td class="yep">yep</td>
+                  <td>off</td>
+                </tr>
+                <tr>
+                  <td>&lt;template&gt;</td>
+                  <td class="in-dev">in dev</td>
+                  <td class="yep">yep</td>
+                  <td class="yep">yep</td>
+                </tr>
+                <tr>
+                  <td>HTML Imports</td>
+                  <td>maybe</td>
+                  <td class="yep">yep</td>
+                  <td class="never">never</td>
+                </tr>
+                <tr>
+                  <td>Shadow DOM</td>
+                  <td>maybe</td>
+                  <td class="yep">yep</td>
+                  <td>off</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section data-background="#4E342E">
+          <section>
+            <h1>practical</h1>
+          </section>
+          <section>
+            <h2>using raw tools suxorz</h2>
+          </section>
+          <section>
+            <h2>x-tag can help</h2>
+            <p>
+              <div style="background-color: white; display: inline-block; border-radius: 8px;">
+                <img src="./imgs/x-tag.png" style="border: 0; box-shadow: none;">
+              </div>
+            </p>
+          </section>
+          <section>
+            <h2>polymer to the rescue</h2>
+            <p>
+              <div style="background-color: white; display: inline-block; border-radius: 8px;">
+                <img src="./imgs/polymer-logo.svg" style="border: 0; box-shadow: none;">
+              </div>
+              <br>
+              <a href="https://www.polymer-project.org">polymer-project.org</a>
+            </p>
+          </section>
+          <section>
+            <h2>Polymer's extra features</h2>
+            <p>
+              <ul>
+                <li>mixins</li>
+                <li>data binding</li>
+                <li>&lt;template&gt; extensions</li>
+                <li>"shady" DOM <i>or</i> shadow DOM</li>
+                <li>DOM element finding</li>
+                <li>declarative event listeners</li>
+                <li>utility functions</li>
+                <li>computed bindings</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Polymer's catalog</h2>
+            <p><a href="https://elements.polymer-project.org" target="_blank">elements.polymer-project.org</a></p>
+          </section>
+          <section>
+            <h2>Community catalog</h2>
+            <p><a href="https://customelements.io">customelements.io</a></p>
+          </section>
+        </section>
+        <section data-background="#D84315">
+          <section>
+            <h1>Build a Web Component</h1>
+            <h2>code time</h2>
+          </section>
+        </section>
+        <section data-background="#4E342E">
+          <section>
+            <h2>contact info</h2>
+            <p>
+              <a href="mailto:curtis@schlak.com">curtis@schlak.com</a>
+            </p>
+            <p>
+              <a href="http://twitter.com/realistschuckle">@realistschuckle</a>
+            </p>
+          </section>
+          <section>
+            <h2>conversation?</h2>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      Reveal.addEventListener('ready', function (e) {
+        document.querySelector('.controls').style.display = 'none';
+      });
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        touch: false,
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>

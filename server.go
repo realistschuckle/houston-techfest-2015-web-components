@@ -7,7 +7,7 @@ import (
 
 func main() {
   dfs := http.FileServer(http.Dir("."))
-  dfsPaths := []string { "/", "/assets", "/bower_components", "/components" }
+  dfsPaths := []string { "/", "/assets", "/bower_components", "/components", "/presentation" }
 
   for _, p := range dfsPaths {
     http.HandleFunc(p, dfs.ServeHTTP)
