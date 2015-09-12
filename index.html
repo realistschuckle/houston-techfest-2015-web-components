@@ -15,8 +15,10 @@
       <h1>day planner for ಠ_ಠ</h1>
     </header>
     <main class="flex layout vertical">
-      <curtissimo-days></curtissimo-days>
-      <curtissimo-hours></curtissimo-hours>
+      <template is="dom-bind">
+        <curtissimo-days selected="{{selected}}"></curtissimo-days>
+        <curtissimo-hours day="{{selected}}"></curtissimo-hours>
+      </template>
     </main>
     <footer class="layout horizontal center center-justified">
       <div><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Web Components Presentation for Houston TechFest 2015</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://curtissimo.com" property="cc:attributionName" rel="cc:attributionURL">curtissimo llc</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>

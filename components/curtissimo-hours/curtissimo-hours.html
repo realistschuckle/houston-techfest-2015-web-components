@@ -83,7 +83,7 @@
   </style>
   <template>
     <div id="appointments" class="flex overflow-vertical layout vertical stretch">
-      <header>2 September</header>
+      <header>{{formattedDate}}</header>
       <div class="flex overflow-horizontal layout vertical" id="timeline-container">
           <div id="timeline-header" class="layout horizontal">
             <div class="hour">6:00am</div>
@@ -185,8 +185,40 @@
     </div>
   </template>
   <script>
+    var months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
+
     Polymer({
-      is: 'curtissimo-hours'
+      is: 'curtissimo-hours',
+
+      properties: {
+        day: Date,
+
+        formattedDate: {
+          type: String,
+          computed: 'formatDate(day)'
+        }
+      },
+
+      formatDate: function (day) {
+        return day.getDate() + ' ' + months[day.getMonth()];
+      },
+
+      attached: function () {
+        this.$$('header').offsetHeight;
+      }
     });
   </script>
 </dom-module>

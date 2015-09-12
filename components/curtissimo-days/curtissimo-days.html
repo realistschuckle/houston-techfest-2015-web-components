@@ -1,174 +1,162 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 
 <dom-module id="curtissimo-days">
-  <style>
-    .calendar-holder {
-      flex: 0 0 320px;
-      box-shadow: 1px 0 1px 0 black;
-      position: relative;
-      z-index: 2;
-    }
-
-    #calendar {
-      height: 320px;
-      width: 300vw;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: default;
-    }
-
-    #calendar > .month {
-      display: inline-block;
-      position: relative;
-      width: 100vw;
-      height: 100%;
-      vertical-align: top;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    #calendar .day-container {
-      height: 100%;
-      background-color: white;
-    }
-
-    #calendar .day-container > :first-child {
-      border-left: 1px inset #D32F2F;
-    }
-
-    .saturday,
-    .sunday {
-      background-color: #C5CAE9;
-    }
-
-    #calendar > .day-30 > .day-container > .day,
-    #calendar > .day-31 > .day-container > .day {
-      box-sizing: border-box;
-      text-align: center;
-      position: relative;
-      border-right: 1px solid #ECEFF1;
-    }
-
-    #calendar > .day-30 > .day-container > .day {
-      flex-basis: 3.33333333333333vw;
-    }
-
-    #calendar > .day-31 > .day-container > .day {
-      flex-basis: 3.2258064516129vw;
-    }
-
-    #calendar > .day-30 > .day-container > .day > .appt {
-      width: 3.33333333333333vw;
-    }
-
-    #calendar > .day-31 > .day-container > .day > .appt {
-      width: 3.2258064516129vw;
-    }
-
-    #calendar > .month > header {
-      position: absolute;
-      bottom: 0;
-      left: 10px;
-      color: rgba(62, 39, 35, .1);
-      font-size: 100px;
-      font-weight: 700;
-      z-index: 1;
-    }
-
-    .today {
-      background-color: #FFF59D;
-    }
-
-    .selected {
-      background-color: #FFEB3B;
-    }
-
-    .day:hover {
-      background-color: #FBC02D;
-    }
-
-    .day-1:before {
-      content: "1";
-    }
-
-    .day-2:before {
-      content: "2";
-    }
-
-    .day > .appt {
-      position: absolute;
-      color: white;
-    }
-
-    .day > .appt:nth-child(2n) {
-      background-color: rgba(62, 39, 35, .75);
-    }
-
-    .day > .appt:nth-child(2n + 1) {
-      background-color: rgba(239, 108, 0, .75);
-    }
-
-    .a8 {
-      top: 40px;
-    }
-
-    .a9 {
-      top: 60px;
-    }
-
-    .a10 {
-      top: 80px;
-    }
-
-    .a15 {
-      top: 180px;
-    }
-
-    .a20 {
-      top: 280px;
-    }
-
-    .h0-25 {
-      height: 5px;
-    }
-
-    .h0-5 {
-      height: 10px;
-    }
-
-    .h1 {
-      height: 20px;
-    }
-
-    .h3 {
-      height: 60px;
-    }
-
-    .overflow-horizontal {
-      overflow-x: auto;
-      overflow-y: hidden;
-    }
-
-    .overflow-vertical {
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-  </style>
   <template>
+    <style>
+      header {
+        pointer-events: none;
+      }
+
+      .calendar-holder {
+        flex: 0 0 320px;
+        box-shadow: 1px 0 1px 0 black;
+        position: relative;
+        z-index: 2;
+      }
+
+      #calendar {
+        height: 320px;
+        width: 300vw;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+      }
+
+      .month {
+        display: inline-block;
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        vertical-align: top;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .day-container {
+        height: 100%;
+        background-color: white;
+      }
+
+      .day-container > :first-child {
+        border-left: 1px inset #D32F2F;
+      }
+
+      .saturday,
+      .sunday {
+        background-color: #C5CAE9;
+      }
+
+      .day {
+        box-sizing: border-box;
+        text-align: center;
+        position: relative;
+        border-right: 1px solid #ECEFF1;
+      }
+
+      .day-30 .day {
+        flex-basis: 3.33333333333333vw;
+      }
+
+      .day-31 .day {
+        flex-basis: 3.2258064516129vw;
+      }
+
+      .day-30 .appt {
+        width: 3.33333333333333vw;
+      }
+
+      .day-31 .appt {
+        width: 3.2258064516129vw;
+      }
+
+      header {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        color: rgba(62, 39, 35, .1);
+        font-size: 100px;
+        font-weight: 700;
+        z-index: 1;
+      }
+
+      .today {
+        background-color: #FFF59D;
+      }
+
+      .selected {
+        background-color: #FBC02D !important;
+      }
+
+      .day:hover {
+        background-color: #FFEB3B;
+      }
+
+      .day > .appt {
+        position: absolute;
+        color: white;
+      }
+
+      .day > .appt:nth-child(2n) {
+        background-color: rgba(62, 39, 35, .75);
+      }
+
+      .day > .appt:nth-child(2n + 1) {
+        background-color: rgba(239, 108, 0, .75);
+      }
+
+      .a8 {
+        top: 40px;
+      }
+
+      .a9 {
+        top: 60px;
+      }
+
+      .a10 {
+        top: 80px;
+      }
+
+      .a15 {
+        top: 180px;
+      }
+
+      .a20 {
+        top: 280px;
+      }
+
+      .h0-25 {
+        height: 5px;
+      }
+
+      .h0-5 {
+        height: 10px;
+      }
+
+      .h1 {
+        height: 20px;
+      }
+
+      .h3 {
+        height: 60px;
+      }
+
+      .overflow-horizontal {
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+    </style>
     <div class="overflow-horizontal calendar-holder">
       <div id="calendar">
-        <template is="dom-repeat" items="{{calendar}}">
-          <section class="{{item.className}}">
+        <template is="dom-repeat" items="{{calendar.months}}"><section class$="{{item.className}}">
             <header>{{item.name}}</header>
-            <div class="day-container layout horizontal">
+            <div class="day-container layout horizontal" on-tap="_selectDate">
               <template is="dom-repeat" items="{{item.days}}">
-                <div class="{{item.className}}">{{item.number}}</div>
+                <div class$="{{item.className}}" data-date$="{{item.isoDate}}">{{item.number}}</div>
               </template>
             </div>
-          </section>
-        </template>
+          </section></template>
       </div>
     </div>
   </template>
@@ -207,6 +195,11 @@
         d.setDate(d.getDate() + 1);
       }
     }
+    Month.prototype.select = function (date, notify) {
+      for (var i = 0; i < this.days.length; i += 1) {
+        this.days[i].select(date, notify.bind(null, i));
+      }
+    };
     Object.defineProperty(Month.prototype, 'className', {
       get: function () {
         return 'month day-' + this.days.length;
@@ -220,10 +213,27 @@
 
     function Day(date) {
       this.date = date;
+      this.selected = false;
     }
+    Day.prototype.select = function (date, notify) {
+      if (this.date.valueOf() === date.valueOf() && !this.selected) {
+        this.selected = true;
+        notify(this.className);
+      } else if (this.selected) {
+        this.selected = false;
+        notify(this.className);
+      }
+    };
     Object.defineProperty(Day.prototype, 'className', {
       get: function () {
-        return ('day ' + days[this.date.getDay()]).toLowerCase();
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return [
+          'day',
+          days[this.date.getDay()].toLowerCase(),
+          (this.date.valueOf() === today.valueOf()? 'today' : ''),
+          (this.selected? 'selected' : '')
+        ].join(' ').trim();
       }
     });
     Object.defineProperty(Day.prototype, 'number', {
@@ -231,13 +241,49 @@
         return this.date.getDate();
       }
     });
+    Object.defineProperty(Day.prototype, 'isoDate', {
+      get: function () {
+        return this.date.toISOString();
+      }
+    });
 
     Polymer({
       is: 'curtissimo-days',
 
-      created: function () {
-        console.log('this', arguments.callee.toString());
-        console.log('this', this.calendar);
+      properties: {
+        selected: {
+          type: Date,
+          value: new Date(),
+          notify: true,
+          observer: '_selectedChanged'
+        }
+      },
+
+      _selectedChanged: function () {
+        var notify = (function (monthIndex, dayIndex, value) {
+          var path = [
+            'calendar',
+            'months',
+            monthIndex,
+            'days',
+            dayIndex,
+            'className'
+          ].join('.');
+          this.notifyPath(path, value);
+        }).bind(this);
+
+        this.selected.setHours(0, 0, 0, 0);
+        if (this.calendar) {
+          this.calendar.select(this.selected, notify);
+        }
+      },
+
+      _selectDate: function (e) {
+        var d = e.target.getAttribute('data-date');
+        this.selected = new Date(d);
+      },
+
+      attached: function () {
         var d = new Date();
         var year = d.getFullYear();
         var month = d.getMonth();
@@ -246,8 +292,14 @@
             new Month(year, month - 1),
             new Month(year, month),
             new Month(year, month + 1)
-          ]
+          ],
+          select: function (date, notify) {
+            for (var i = 0; i < this.months.length; i += 1) {
+              this.months[i].select(date, notify.bind(null, i));
+            }
+          }
         };
+        this.calendar.select(this.selected, () => {});
       }
     });
   </script>
