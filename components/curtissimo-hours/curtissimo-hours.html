@@ -82,109 +82,26 @@
     }
   </style>
   <template>
-    <div id="appointments" class="flex overflow-vertical layout vertical stretch">
+    <div id="appointments" class="flex layout vertical stretch">
       <header>{{formattedDate}}</header>
+      <div>{{appointments.length}}</div>
       <div class="flex overflow-horizontal layout vertical" id="timeline-container">
-          <div id="timeline-header" class="layout horizontal">
-            <div class="hour">6:00am</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">7:00am</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">8:00am</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">9:00am</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">10:00am</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">11:00am</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">noon</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">1:00pm</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">2:00pm</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-            <div class="hour">3:00pm</div>
-            <div>:15</div>
-            <div>:30</div>
-            <div>:45</div>
-          </div>
-          <div id="timeline-entries" class="flex layout horizontal">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div>
-              <div class="timeline-entry odd-appt dh1">
-                I have to do some work for some people at this time
-              </div>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div>
-              <div class="timeline-entry even-appt dh0-5">
-                I have to do some work for some people at this time
-              </div>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div>
-              <div class="timeline-entry odd-appt dh0-25">
-                I have to do some work for some people at this time
-              </div>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+        <div id="timeline-header" class="layout horizontal">
+          <template is="dom-repeat" items="{{hours}}">
+            <div class$="{{item.headerClass}}">{{item.headerText}}</div>
+          </template>
+        </div>
+        <div id="timeline-entries" class="flex layout horizontal">
+          <template is="dom-repeat" items="{{hours}}">
+            <div id$="{{item.bodyId}}" class="quarter-hour">asdf</div>
+          </template>
+        </div>
       </div>
     </div>
   </template>
   <script>
+    'use strict';
+
     var months = [
       'January',
       'February',
@@ -200,15 +117,56 @@
       'December'
     ];
 
+    class Hour {
+      constructor (datetime) {
+        this.datetime = datetime;
+      }
+
+      get headerText() {
+        var minutes = this.datetime.getMinutes();
+        if (minutes !== 0) {
+          return ':' + minutes;
+        }
+        return this.datetime.getHours() + ':00';
+      }
+
+      get headerClass() {
+        var minutes = this.datetime.getMinutes();
+        if (minutes !== 0) {
+          return '';
+        }
+        return 'hour';
+      }
+
+      get bodyId() {
+        return [
+          'qh',
+          this.datetime.getHours(),
+          this.datetime.getMinutes()
+        ].join('');
+      }
+    }
+
     Polymer({
       is: 'curtissimo-hours',
 
       properties: {
-        day: Date,
+        day: {
+          type: Date,
+          value: new Date(),
+          notify: true,
+          observer: '_dayChanged'
+        },
 
         formattedDate: {
           type: String,
           computed: 'formatDate(day)'
+        },
+
+        appointments: {
+          type: Array,
+          notify: true,
+          observer: '_appointmentsChanged'
         }
       },
 
@@ -216,8 +174,47 @@
         return day.getDate() + ' ' + months[day.getMonth()];
       },
 
+      _appointmentsChanged: function (old, current) {
+        setTimeout((function () {
+          var all = Polymer.dom(this.root).querySelectorAll('.quarter-hour');
+          for (var elem of all) {
+            Polymer.dom(elem).innerHTML = '';
+          }
+
+          if (!this.appointments) {
+            return;
+          }
+
+          for (var appt of this.appointments) {
+            if (appt.from.valueOf() > this.day.valueOf()) {
+              if (tomorrow - appt.to.valueOf() < 86400000) {
+                var elem = Polymer.dom(this.root).querySelector('#qh730');
+                elem.innerHTML = elem.innerHTML + '<br>Hi!';
+              }
+            }
+          }
+        }).bind(this), 0);
+      },
+
+      _dayChanged: function () {
+        setTimeout((function () {
+          var all = Polymer.dom(this.root).querySelectorAll('.quarter-hour');
+          for (var elem of all) {
+            Polymer.dom(elem).innerHTML = '';
+          }
+        }).bind(this), 0);
+      },
+
       attached: function () {
         this.$$('header').offsetHeight;
+
+        var d = new Date(2000, 1, 1, 6);
+        var upper = new Date(2000, 1, 1, 23);
+        this.hours = [];
+
+        for (; d.valueOf() < upper.valueOf(); d.setMinutes(d.getMinutes() + 15)) {
+          this.push('hours', new Hour(new Date(d.valueOf())));
+        }
       }
     });
   </script>

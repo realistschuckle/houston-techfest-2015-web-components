@@ -7,6 +7,7 @@
     <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="/bower_components/polymer/polymer.html">
     <link rel="import" href="/bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+    <link rel="import" href="/bower_components/iron-localstorage/iron-localstorage.html">
     <link rel="import" href="/components/curtissimo-hours/curtissimo-hours.html">
     <link rel="import" href="/components/curtissimo-days/curtissimo-days.html">
   </head>
@@ -16,8 +17,9 @@
     </header>
     <main class="flex layout vertical">
       <template is="dom-bind">
-        <curtissimo-days selected="{{selected}}"></curtissimo-days>
-        <curtissimo-hours day="{{selected}}"></curtissimo-hours>
+        <iron-localstorage name="schedule" value="{{schedule}}"></iron-localstorage>
+        <curtissimo-days selected="{{selected}}" appointments="{{schedule}}"></curtissimo-days>
+        <curtissimo-hours day="{{selected}}" appointments="{{schedule}}"></curtissimo-hours>
       </template>
     </main>
     <footer class="layout horizontal center center-justified">

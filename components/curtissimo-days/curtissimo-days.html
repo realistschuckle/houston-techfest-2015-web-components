@@ -106,48 +106,13 @@
         background-color: rgba(239, 108, 0, .75);
       }
 
-      .a8 {
-        top: 40px;
-      }
-
-      .a9 {
-        top: 60px;
-      }
-
-      .a10 {
-        top: 80px;
-      }
-
-      .a15 {
-        top: 180px;
-      }
-
-      .a20 {
-        top: 280px;
-      }
-
-      .h0-25 {
-        height: 5px;
-      }
-
-      .h0-5 {
-        height: 10px;
-      }
-
-      .h1 {
-        height: 20px;
-      }
-
-      .h3 {
-        height: 60px;
-      }
-
       .overflow-horizontal {
         overflow-x: auto;
         overflow-y: hidden;
       }
     </style>
     <div class="overflow-horizontal calendar-holder">
+      <div class="MOO">{{appointments.length}}</div>
       <div id="calendar">
         <template is="dom-repeat" items="{{calendar.months}}"><section class$="{{item.className}}">
             <header>{{item.name}}</header>
@@ -256,7 +221,16 @@
           value: new Date(),
           notify: true,
           observer: '_selectedChanged'
+        },
+
+        appointments: {
+          type: Array,
+          observer: '_appointmentsChanged'
         }
+      },
+
+      _appointmentsChanged: function (old, current) {
+        console.log('-days appts changed', old, current);
       },
 
       _selectedChanged: function () {
