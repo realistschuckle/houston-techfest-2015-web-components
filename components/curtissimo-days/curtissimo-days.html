@@ -112,7 +112,6 @@
       }
     </style>
     <div class="overflow-horizontal calendar-holder">
-      <div class="MOO">{{appointments.length}}</div>
       <div id="calendar">
         <template is="dom-repeat" items="{{calendar.months}}"><section class$="{{item.className}}">
             <header>{{item.name}}</header>
@@ -230,7 +229,6 @@
       },
 
       _appointmentsChanged: function (old, current) {
-        console.log('-days appts changed', old, current);
       },
 
       _selectedChanged: function () {

@@ -84,7 +84,6 @@
   <template>
     <div id="appointments" class="flex layout vertical stretch">
       <header>{{formattedDate}}</header>
-      <div>{{appointments.length}}</div>
       <div class="flex overflow-horizontal layout vertical" id="timeline-container">
         <div id="timeline-header" class="layout horizontal">
           <template is="dom-repeat" items="{{hours}}">
@@ -174,35 +173,49 @@
         return day.getDate() + ' ' + months[day.getMonth()];
       },
 
-      _appointmentsChanged: function (old, current) {
-        setTimeout((function () {
-          var all = Polymer.dom(this.root).querySelectorAll('.quarter-hour');
-          for (var elem of all) {
-            Polymer.dom(elem).innerHTML = '';
-          }
+      _appointmentsChanged: function (current, old) {
+        if (!current) {
+          return;
+        }
 
-          if (!this.appointments) {
-            return;
+        for (var appt of current) {
+          if (typeof appt.from === 'string') {
+            appt.from = new Date(appt.from);
           }
-
-          for (var appt of this.appointments) {
-            if (appt.from.valueOf() > this.day.valueOf()) {
-              if (tomorrow - appt.to.valueOf() < 86400000) {
-                var elem = Polymer.dom(this.root).querySelector('#qh730');
-                elem.innerHTML = elem.innerHTML + '<br>Hi!';
-              }
-            }
-          }
-        }).bind(this), 0);
+        }
+        setTimeout(this._updateAppointmentBlocks.bind(this), 0);
       },
 
       _dayChanged: function () {
-        setTimeout((function () {
-          var all = Polymer.dom(this.root).querySelectorAll('.quarter-hour');
-          for (var elem of all) {
-            Polymer.dom(elem).innerHTML = '';
+        setTimeout(this._updateAppointmentBlocks.bind(this), 0);
+      },
+
+      _updateAppointmentBlocks: function () {
+        var all = Polymer.dom(this.root).querySelectorAll('.quarter-hour');
+        for (var elem of all) {
+          Polymer.dom(elem).innerHTML = '';
+        }
+
+        if (!this.appointments) {
+          return;
+        }
+
+        var tomorrow = new Date(this.day.valueOf());
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(0, 0, 0, 0);
+        for (var appt of this.appointments) {
+          if (appt.from.valueOf() > this.day.valueOf()) {
+            if (appt.from.valueOf() < tomorrow.valueOf()) {
+              var id = '#qh' + appt.from.getHours() + appt.from.getMinutes();
+              var elem = Polymer.dom(this.root).querySelector(id);
+              var child = document.createElement('div');
+              child.className = 'odd-appt timeline-entry';
+              child.style.width = (60 * appt.duration) + 'px';
+              child.innerHTML = appt.notes;
+              Polymer.dom(elem).appendChild(child);
+            }
           }
-        }).bind(this), 0);
+        }
       },
 
       attached: function () {
