@@ -25,4 +25,6 @@ to write code: _on the cutting edge_ :)
 2. Start up a server
   * go: `go run server.go`
   * python: `python -m SimpleHTTPServer 8080`
-3. Open [http://localhost:8080](http://localhost:8080) in your browser
+3. View stuff
+  * Open [http://localhost:8080](http://localhost:8080) for the sample app
+  * Open [http://localhost:8080/presentation](http://localhost:8080/presentation) for the slides
