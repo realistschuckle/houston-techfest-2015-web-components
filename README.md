@@ -21,7 +21,7 @@ The code will only work in browsers that support ES6 features like classes and
 arrow functions, not because Web components need that, but that's how I like
 to write code: _on the cutting edge_ :)
 
-1. Clone the repo (`git clone https://goo.gl/vB75xS techfest`)
+1. Clone the repo (`git clone https://github.com/realistschuckle/houston-techfest-2015-web-components.git techfest`)
 2. Install dependencies (`bower install`)
 2. Start up a server
   * go: `go run server.go`
